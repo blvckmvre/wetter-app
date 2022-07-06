@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: sans-serif;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        to bottom right, 
+        #560319,
+        #560319 20px, 
+        black 20px, 
+        black 40px
+    );
+    color: whitesmoke;
+}
+.App {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+.desc {
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    font-size: 0.8em;
+}
+.desclink {
+    color: turquoise;
+}
+.bar__wrapper {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.weather__wrapper {
+    display: grid;
+    gap: 15px;
+    grid-template: 
+    'a b'
+    'c d'
+    'e f'
+    'g g';
+}
+.content__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    background-color: #404040;
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 250px;
+}
+.location {
+    grid-area: a;
+}
+.content__child {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.btn {
+    background-color: transparent;
+    border: 2px solid whitesmoke;
+    color: whitesmoke;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 0;
+    font-size: 2em;
+}
+.btn:hover {
+    box-shadow: 0 0 7px 3px whitesmoke;
+}
+.bottom__block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    grid-area: g;
+    padding: 5px 0;
+}
+.movedownbtn {
+    position: fixed;
+    bottom:0;
+    left: 0;
+    height:50px;
+    color: whitesmoke;
+    width: 100%;
+    border: none;
+    background: linear-gradient(transparent, rgba(0,0,0,0.6));
+    font-size: 1.6em;
+    font-weight: bold;
+    cursor: pointer;
+}
+.updatebtn {
+    display: block;
+    position: fixed;
+    margin: 0 auto;
+    top:0;
+    left: 10px;
+    height:40px;
+    padding: 10px;
+    border-radius: 30%;
+    color: whitesmoke;
+    border: none;
+    font-size: 1.4em;
+    font-weight: bold;
+    cursor: pointer;
+}
+.updatebtn:hover {
+    box-shadow: 0 0 10px 4px rgba(255,255,255,0.7);
+}
+.movedownbtn:hover {
+    background: linear-gradient(transparent, rgba(0,0,0,1));
+    color: darkgray;
+}
+.current__transition {
+    pointer-events: none;
+    animation: 0.25s ease-in swipe;
+    animation-fill-mode: forwards;
+}
+@keyframes swipe {
+    0%{
+        position: relative;
+        bottom:0;
+    }
+    100%{
+        position: relative;
+        bottom: 1500px;
+    }
+}
+.forecast {
+    gap: 10px;
+    padding: 20px;
+    min-width: 400px;
+}

@@ -1,0 +1,30 @@
+.LoadingScreen {
+    position: fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+.LoadingCircle {
+    fill: gainsboro;
+    animation-name: load;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    clip-path: inset(0 100% 0 0);
+}
+@keyframes load {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+    50%{
+        clip-path: inset(0 0 0 0);
+    }
+    100%{
+        clip-path: inset(0 0 0 100%);
+    }
+}
